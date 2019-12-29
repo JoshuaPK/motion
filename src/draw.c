@@ -1076,6 +1076,9 @@ static int draw_textn(unsigned char *image, int startx,  int starty,  int width,
     int pos, line_offset, next_char_offs;
     unsigned char *image_ptr, *char_ptr;
 
+    printf("draw_textn image specs: startx: %i, starty: %i, width: %i, len: %i, factor: %i\n", startx, starty, width, len, factor);
+    printf("draw_textn Text: %s\n", text);
+
     if (startx > width / 2)
         startx -= len * (6 * factor);
 
@@ -1133,6 +1136,8 @@ int draw_text(unsigned char *image, int width, int height, int startx, int start
     int num_nl = 0;
     const char *end, *begin;
     int line_space, txtlen;
+
+    printf("draw_text Image Specs: %i wide x %i high, %i startx and %i starty\n", width, height, startx, starty);
 
     /* Count the number of newlines in "text" so we scroll it up the image. */
     begin = end = text;
